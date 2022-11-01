@@ -1,6 +1,6 @@
 module.exports = {
   images: {
-    domains: ["cdn.hashnode.com"],
+    domains: ['avatars.githubusercontent.com',"cdn.hashnode.com", "i.ibb.co"],
   },
   reactStrictMode: true,
 };

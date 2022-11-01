@@ -655,11 +655,11 @@ export default function Home({ publications }) {
                 </div>
                 <div className="flex w-full h-full mb-4 md:pl-8 md:w-2/5 md:mb-0">
                   <Image
-                    src="/headshot-with-frame-2.jpg"
+                    src="https://avatars.githubusercontent.com/u/96243438?v=4"
                     className="overflow-hidden rounded-md"
                     width={880}
                     height={880}
-                    alt={"Daniel Cranney headshot"}
+                    alt={"Image"}
                   />
                 </div>
               </div>
@@ -977,8 +977,8 @@ export default function Home({ publications }) {
                 flexDirection={`flex-col lg:flex-row`}
                 imgWidth={"1366"}
                 imgHeight={"666"}
-                imgSrc={"/projects/reportr.png"}
-                liveLink={"https://reportr.io/"}
+                imgSrc={project.ImageLink}
+                liveLink={`${project.DemoLink}`}
                 repoLink={null}
                 /> 
                 :
@@ -1617,29 +1617,29 @@ export default function Home({ publications }) {
  * @param {Object} context
  * @returns props
  */
-export async function getServerSideProps(context) {
-  const res = await fetch("https://api.hashnode.com/", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: "32ab9fe7-0331-4efc-bdb8-5a3e0bfdd9b9",
-    },
-    body: JSON.stringify({
-      query:
-        'query {user(username: "danielcranney") {publication {posts(page: 0) {title brief slug coverImage dateAdded}}}}',
-    }),
-  });
-  const publications = await res.json();
+// export async function getServerSideProps(context) {
+//   const res = await fetch("https://api.hashnode.com/", {
+//     method: "POST",
+//     headers: {
+//       "Content-Type": "application/json",
+//       Authorization: "32ab9fe7-0331-4efc-bdb8-5a3e0bfdd9b9",
+//     },
+//     body: JSON.stringify({
+//       query:
+//         'query {user(username: "danielcranney") {publication {posts(page: 0) {title brief slug coverImage dateAdded}}}}',
+//     }),
+//   });
+//   const publications = await res.json();
 
-  if (!publications) {
-    return {
-      notFound: true,
-    };
-  }
+//   if (!publications) {
+//     return {
+//       notFound: true,
+//     };
+//   }
 
-  return {
-    props: {
-      publications,
-    },
-  };
-}
+//   return {
+//     props: {
+//       publications,
+//     },
+//   };
+// }

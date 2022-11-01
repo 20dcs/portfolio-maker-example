@@ -23,6 +23,7 @@ const FeaturedProjectCard = ({
   liveLink,
   repoLink,
 }) => {
+  console.log(imgSrc);
   return (
     <article
       className={`relative flex items-stretch w-full dark:bg-mid bg-light/10 p-3.5 my-4 ${flexDirection} gap-x-3.5 rounded-md`}
@@ -34,7 +35,7 @@ const FeaturedProjectCard = ({
           src={imgSrc}
           width={imgWidth}
           height={imgHeight}
-          alt={`${title} user interface`}
+          alt={`${title}`}
         />
       </div>
 
